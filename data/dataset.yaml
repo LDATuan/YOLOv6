@@ -1,6 +1,6 @@
-train: debug\images\train
-val: debug\images\val
+train: data\train_images\images\train
+val: data\train_images\images\val
 
 is_coco: False
 nc: 5
-names: ["t1","t2", "t3", "t4", "t5"]
+names: [ "t1","t2", "t3", "t4", "t5" ]
