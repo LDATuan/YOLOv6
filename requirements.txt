@@ -1,7 +1,8 @@
 # pip install -r requirements.txt
 # python3.8 environment
 
-torch>=1.8.0
+numpy>=1.24.0
+torch
 torchvision>=0.9.0
 numpy>=1.24.0
 opencv-python>=4.1.2
@@ -14,4 +15,5 @@ pycocotools>=2.0
 onnx>=1.10.0  # ONNX export
 onnx-simplifier>=0.3.6 # ONNX simplifier
 thop  # FLOPs computation
+psutil
 # pytorch_quantization>=2.1.1
