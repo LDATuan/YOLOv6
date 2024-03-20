@@ -218,6 +218,8 @@ class Evaler:
                     for i, c in enumerate(ap_class):
                         LOGGER.info(pf % (model.names[c], seen, nt[c], p[i, AP50_F1_max_idx], r[i, AP50_F1_max_idx],
                                            f1[i, AP50_F1_max_idx], ap50[i], ap[i]))
+                        print(pf % (model.names[c], seen, nt[c], p[i, AP50_F1_max_idx], r[i, AP50_F1_max_idx],
+                                           f1[i, AP50_F1_max_idx], ap50[i], ap[i]))
 
                 if self.plot_confusion_matrix:
                     confusion_matrix.plot(save_dir=self.save_dir, names=list(model.names))
