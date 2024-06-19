@@ -1,0 +1,6 @@
+train: data\train_images\images\train
+val: data\train_images\images\val
+
+is_coco: False
+nc: 2
+names: ['other', 'pothole']
