@@ -70,7 +70,7 @@ class Inferer:
     def infer(self, conf_thres, iou_thres, classes, agnostic_nms, max_det, save_dir, save_txt, save_img, hide_labels, hide_conf, view_img=True):
         ''' Model Inference and results visualization '''
         vid_path, vid_writer, windows = None, None, []
-        fps_calculator = CalcFPS()
+        # fps_calculator = CalcFPS()
         for img_src, img_path, vid_cap in tqdm(self.files):
             img, img_src = self.process_image(img_src, self.img_size, self.stride, self.half)
             img = img.to(self.device)
@@ -116,20 +116,20 @@ class Inferer:
 
                 img_src = np.asarray(img_ori)
 
-            # FPS counter
-            fps_calculator.update(1.0 / (t2 - t1))
-            avg_fps = fps_calculator.accumulate()
-
-            if self.files.type == 'video':
-                self.draw_text(
-                    img_src,
-                    f"FPS: {avg_fps:0.1f}",
-                    pos=(20, 20),
-                    font_scale=1.0,
-                    text_color=(204, 85, 17),
-                    text_color_bg=(255, 255, 255),
-                    font_thickness=2,
-                )
+            # # FPS counter
+            # fps_calculator.update(1.0 / (t2 - t1))
+            # avg_fps = fps_calculator.accumulate()
+            #
+            # if self.files.type == 'video':
+            #     self.draw_text(
+            #         img_src,
+            #         f"FPS: {avg_fps:0.1f}",
+            #         pos=(20, 20),
+            #         font_scale=1.0,
+            #         text_color=(204, 85, 17),
+            #         text_color_bg=(255, 255, 255),
+            #         font_thickness=2,
+            #     )
 
             if view_img:
                 if img_path not in windows:
@@ -271,7 +271,7 @@ class Inferer:
 
     @staticmethod
     def generate_colors(i, bgr=False):
-        hex = ('FF3838', '3DDB86', 'FF9D97', 'FF701F', 'FFB21D', 'CFD231', '48F90A', '92CC17',  '1A9334', '00D4BB',
+        hex = ('3DDB86', 'FF3838','FF9D97', 'FF701F', 'FFB21D', 'CFD231', '48F90A', '92CC17',  '1A9334', '00D4BB',
                '2C99A8', '00C2FF', '344593', '6473FF', '0018EC', '8438FF', '520085', 'CB38FF', 'FF95C8', 'FF37C7')
         palette = []
         for iter in hex:
