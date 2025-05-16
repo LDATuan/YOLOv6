@@ -13,6 +13,9 @@ if str(ROOT) not in sys.path:
 
 from yolov6.utils.events import LOGGER
 from yolov6.core.inferer import Inferer
+from yolov6.models.yolo import Model  # Make sure this is imported
+
+torch.serialization.add_safe_globals({'Model': Model})
 
 
 def get_args_parser(add_help=True):

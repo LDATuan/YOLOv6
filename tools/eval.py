@@ -14,6 +14,9 @@ from yolov6.core.evaler import Evaler
 from yolov6.utils.events import LOGGER
 from yolov6.utils.general import increment_name, check_img_size
 from yolov6.utils.config import Config
+from yolov6.models.yolo import Model
+
+torch.serialization.add_safe_globals({'Model': Model})
 
 def boolean_string(s):
     if s not in {'False', 'True'}:

@@ -20,7 +20,9 @@ from yolov6.utils.config import Config
 from yolov6.utils.events import LOGGER, save_yaml
 from yolov6.utils.envs import get_envs, select_device, set_random_seed
 from yolov6.utils.general import increment_name, find_latest_checkpoint, check_img_size
+from yolov6.models.yolo import Model  # Make sure this is imported
 
+torch.serialization.add_safe_globals({'Model': Model})
 
 def get_args_parser(add_help=True):
     parser = argparse.ArgumentParser(description='YOLOv6 PyTorch Training', add_help=add_help)
